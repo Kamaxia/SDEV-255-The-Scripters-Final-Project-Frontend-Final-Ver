@@ -26,7 +26,6 @@ function logout() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Get the student ID from localStorage (assuming the student is logged in)
     const studentId = localStorage.getItem("userId");
 
     if (!studentId) {
@@ -92,6 +91,5 @@ document.addEventListener("DOMContentLoaded", function () {
             });
     }
 
-    // Call the function to fetch and display the schedule
     fetchSchedule();
 });
