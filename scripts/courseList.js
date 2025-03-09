@@ -40,8 +40,7 @@ async function getClass() {
         const coursesContainer = document.getElementById("courses-container");
 
         if (data.classes && data.classes.length > 0) {
-            // Clear previous content before adding new ones (if needed)
-            coursesContainer.innerHTML = ""; // Optional: clear content if you want to reset
+            coursesContainer.innerHTML = ""; 
 
             // Loop through all courses dynamically
             data.classes.forEach((course) => {
@@ -70,7 +69,7 @@ async function getClass() {
                 viewButton.classList.add("btn", "btn-primary");
                 viewButton.innerText = "View";
                 viewButton.onclick = function() {
-                    viewCourse(course._id); // Pass the MongoDB _id to the viewCourse function
+                    viewCourse(course._id); 
                 };
 
                 cardBody1.appendChild(courseTitle);
@@ -129,7 +128,7 @@ function viewCourse(courseId) {
         localStorage.setItem("course", JSON.stringify(courseData));
 
         // Redirect to the course details page, passing the course's _id as a query parameter
-        window.location.href = `courseView.html?id=${courseData._id}`; // Use backticks to inject courseId into the URL
+        window.location.href = `courseView.html?id=${courseData._id}`; 
     } else {
         console.error("Course not found.");
     }
