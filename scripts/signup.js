@@ -19,7 +19,7 @@ document.getElementById("student-signup").addEventListener("submit", async funct
     const email = document.getElementById("student-email");
     const password = document.getElementById("student-password");
     const passwordConfirm = document.getElementById("student-password-confirm");
-    const schoolDomain = "@student.catalyst.edu";  // Example domain for school emails
+    const schoolDomain = "@student.catalyst.edu"; 
 
     if (!fullName.value.trim()) {
         document.getElementById("name-error").style.display = "block";
@@ -59,7 +59,7 @@ document.getElementById("student-signup").addEventListener("submit", async funct
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    username: fullName.value,  // Corrected field name
+                    username: fullName.value,  
                     email: email.value,
                     password: password.value
                 })
@@ -98,7 +98,7 @@ document.getElementById("teacher-signup").addEventListener("submit", async funct
     const password = document.getElementById("teacher-password");
     const passwordConfirm = document.getElementById("teacher-password-confirm");
     const area = document.getElementById("teacher-area");
-    const schoolDomain = "@catalyst.edu";  // Example domain for school emails
+    const schoolDomain = "@catalyst.edu"; 
 
     // Validate Full Name
     if (!fullName.value.trim()) {
