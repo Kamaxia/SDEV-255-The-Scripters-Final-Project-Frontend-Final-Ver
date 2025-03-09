@@ -105,7 +105,7 @@ async function submitCourseEdit(event) {
         description: document.getElementById("editCourseDesc").value,
         schedule: document.getElementById("editCourseSched").value.split(","),
         method: document.getElementById("editCourseMeth").value,
-        teacherId: localStorage.getItem("userId"), // Assuming teacher's ID is stored in localStorage
+        teacherId: localStorage.getItem("userId"), 
     };
 
     const token = localStorage.getItem("token");
