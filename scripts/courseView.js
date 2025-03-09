@@ -140,8 +140,7 @@ async function dropCourse() {
         if (response.ok) {
             alert("Successfully dropped the course!");
             document.getElementById("dropBtn").style.display = "none"; // Hide the Drop button
-            // Optionally, you can redirect to another page (e.g., student dashboard)
-            window.location.href = "schedule.html"; // Redirect to student dashboard
+            window.location.href = "schedule.html";
         } else {
             const error = await response.json();
             alert(error.error || "Failed to drop the course.");
