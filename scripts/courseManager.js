@@ -44,7 +44,6 @@ window.onload = function () {
             return;
         }
 
-        // Prepare the data to send
         const newClass = {
             title: courseTitle,
             description: courseDesc,
@@ -54,14 +53,9 @@ window.onload = function () {
             credits: courseCredits
         };
 
-        // Call createNewClass function with form data
         await createNewClass(teacherId, newClass);
-
-        // Close the modal
         const modal = bootstrap.Modal.getInstance(document.getElementById("addCourseModal"));
         modal.hide(); // Hide the modal after submission
-
-        // Optionally, you can reload the courses list to reflect the new course
         getClass(); // Re-fetch the courses list
     });
 };
@@ -116,7 +110,7 @@ async function getClass() {
                 viewButton.classList.add("btn", "btn-primary");
                 viewButton.innerText = "View";
                 viewButton.onclick = function() {
-                    viewCourse(course._id); // Pass the MongoDB _id to viewCourse function
+                    viewCourse(course._id);
                 };
 
                 cardBody1.appendChild(courseTitle);
@@ -155,7 +149,7 @@ async function getClass() {
                 courseCard.appendChild(cardCol1);
                 courseCard.appendChild(cardCol2);
 
-                coursesContainer.appendChild(courseCard); // Add the course card to the container
+                coursesContainer.appendChild(courseCard); 
             });
         }
     } catch (error) {
@@ -165,11 +159,11 @@ async function getClass() {
 
 // Function to handle course details view
 function viewCourse(courseId) {
-    const courseData = data.classes.find(course => course._id === courseId); // Find course by ID
+    const courseData = data.classes.find(course => course._id === courseId); 
 
     if (courseData) {
-        localStorage.setItem("course", JSON.stringify(courseData)); // Store course in localStorage
-        window.location.href = `courseTeacherView.html?id=${courseData._id}`; // Redirect to course details page
+        localStorage.setItem("course", JSON.stringify(courseData)); 
+        window.location.href = `courseTeacherView.html?id=${courseData._id}`; 
     } else {
         console.error("Course not found.");
     }
